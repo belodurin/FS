@@ -1,0 +1,89 @@
+/* Стили для футера */
+.site-footer {
+    background-color: #4e1ffa;
+    color: rgb(136, 136, 136);
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+/* Стили для header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.image-logo {
+    max-height: 50px;
+}
+
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu div {
+    display: inline-block;
+}
+
+.nav-menu a {
+    color: #333; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    transition: color 0.3s ease; /* Плавный переход цвета */
+}
+
+.nav-menu a:hover {
+    color: #007bff;
+}
