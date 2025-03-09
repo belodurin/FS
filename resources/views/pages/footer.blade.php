@@ -29,7 +29,7 @@
         </div>
 
         <div class="footer-copyright">
-            <p>&copy; {{ date('Y') }} Индустрия АСУТП. Все права защищены.</p>
+            <p>&copy; {{ date('Y') }} FreshPath. Все права защищены.</p>
         </div>
     </div>
 </footer>

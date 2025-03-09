@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+
     <h1 class="text-black text-center">Автоматизация на современных производствах</h1>
     <div class="container text-black">
         <p>Автоматизация на современных производствах — это процесс использования технологий и систем для выполнения задач, которые ранее выполнялись вручную. Основная цель автоматизации — повысить эффективность, снизить затраты и улучшить качество продукции.</p>
@@ -53,5 +54,13 @@
             <div class="image-caption">Интеллектуальные системы</div>
         </div>
     </div>
+    <p></p>
+    <div class="text-center mb-4">
+        <video controls autoplay muted loop width="800" class="mx-auto d-block shadow-lg rounded">
+            <source src="{{ asset('images/intro2.mp4') }}" type="video/mp4">
+            Ваш браузер не поддерживает тег video.
+        </video>
+    </div>
+    <p></p>
 </div>
 @endsection
