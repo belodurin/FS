@@ -11,6 +11,11 @@ class OrderController extends Controller
     // Показать форму заказа
     public function showOrderForm()
     {
+        // Проверка аутентификации пользователя
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Для оформления заказа необходимо войти в систему.');
+        }
+
         return view('order.form');
     }
 
@@ -30,7 +35,7 @@ class OrderController extends Controller
 
         // Создание заказа
         Order::create([
-            'user_id' => Auth::id(), // Используем Auth::id() вместо auth()->user()->id
+            'user_id' => Auth::id(),
             'solution_name' => $validated['solution_name'],
             'description' => $validated['description'],
         ]);

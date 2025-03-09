@@ -16,7 +16,7 @@
             <div class="footer-section">
                 <h2>Контакты</h2>
                 <p>Телефон: 8 (800) 555-3535</p>
-                <p>Email: <a href="mailto:susu@susu.ru">susu@susu.ru</a></p>
+                <p>Email: <a href="mailto:susu@susu.ru" class="email-link">susu@susu.ru</a></p>
             </div>
             <div class="footer-section">
                 <h2>Социальные сети</h2>
@@ -32,6 +32,4 @@
             <p>&copy; {{ date('Y') }} Индустрия АСУТП. Все права защищены.</p>
         </div>
     </div>
-
-    <script src="{{ asset('js/js1.js') }}"></script>
 </footer>

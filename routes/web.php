@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\OrderController;
 
+
 Route::get('/', function () {
     return view('pages.index', ['title' => 'Главная страница']);
 });
@@ -41,4 +42,17 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
     Route::get('/order', [OrderController::class, 'showOrderForm'])->name('order');
     Route::post('/order', [OrderController::class, 'submitOrder']);
+});
+
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/register', [AuthController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Маршруты для заказа (доступны только авторизованным пользователям)
+Route::middleware('auth')->group(function () {
+    Route::get('/order', [OrderController::class, 'showOrderForm'])->name('order.form');
+    Route::post('/order', [OrderController::class, 'submitOrder'])->name('order.submit');
 });

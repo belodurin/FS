@@ -45,15 +45,18 @@ class AuthController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
+        // Создание пользователя
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => bcrypt($validated['password']),
         ]);
 
+        // Авторизация пользователя
         Auth::login($user);
 
-        return redirect()->intended('/order'); // Перенаправление на форму заказа
+        // Перенаправление на форму заказа
+        return redirect()->route('order.form')->with('success', 'Регистрация прошла успешно!');
     }
 
     // Выход из системы

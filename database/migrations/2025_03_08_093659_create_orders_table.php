@@ -7,18 +7,24 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Запуск миграции.
      */
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // Уникальный идентификатор заказа
+            $table->unsignedBigInteger('user_id'); // ID пользователя, который создал заказ
+            $table->string('solution_name'); // Название решения
+            $table->text('description'); // Описание заказа
+            $table->timestamps(); // Поля created_at и updated_at
+
+            // Внешний ключ для связи с таблицей users
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Откат миграции.
      */
     public function down(): void
     {
